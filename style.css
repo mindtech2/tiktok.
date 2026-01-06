@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* PHONE FRAME */
+.app {
+    max-width: 430px;
+    margin: auto;
+    height: 100vh;
+    padding: 20px;
+    background: black;
+}
+
+/* FORM */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    background: #ff0050;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* TOGGLE */
+.toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle span {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: gray;
+    font-size: 14px;
+}
+
+.toggle .active {
+    color: white;
+    border-bottom: 2px solid #ff0050;
+}
+
+a {
+    color: #ff0050;
+    text-decoration: none;
+}
+
+.link {
+    margin-top: 15px;
+    text-align: center;
+}

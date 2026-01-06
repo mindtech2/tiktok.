@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TikTok</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app">
+    <h2>Create account</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Phone or Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Sign up</button>
+    </form>
+
+    <p class="link">
+        <a href="/login">Back to login</a>
+    </p>
+</div>
+
+</body>
+</html>
