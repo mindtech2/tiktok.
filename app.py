@@ -1,16 +1,33 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3
 
-app = Flask(__name__)  
+app = Flask(__name__):init_db()  
 
 @app.route("/")
 def index():
     return render_template("login.html")
 
 # ---------- DATABASE ----------
-def init_db():
-    conn = sqlite3.connect("users.db")
-    c = conn.cursor()
+import psycopg2
+import os
+
+def get_db():def init_db():
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        username TEXT,
+        email TEXT,
+        password TEXT
+    )
+    """)
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return psycopg2.connect(os.environ.get("DATABASE_URL"))
+
 
     # USERS TABLE (PLAIN TEXT)
     c.execute("""
@@ -63,8 +80,11 @@ def login():
         username = request.form["username"]   # phone OR email
         password = request.form["password"]
 
-        conn = sqlite3.connect("users.db")
-        c = conn.cursor()
+        conn = get_db()
+cur = conn.cursor() conn.commit()
+cur.close()
+conn.close()
+
 
         c.execute(
             "SELECT * FROM users WHERE username=? AND password=?",
